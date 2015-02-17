@@ -40,7 +40,9 @@ $(document).ready(function() {
     var side3 = $('input#side3').val();
     var triangle = triangleTracker(side1, side2, side3);
 
-    if(triangle.type=="Equilateral") {
+    if(typeof(triangle)=="string"){
+      alert(triangle);
+    }else if(triangle.type=="Equilateral") {
       $("ul#equilateral").append("<li>" + triangle.side1 + " "+ triangle.side2 + " " + triangle.side3 +  "</li>");
     }else if(triangle.type=="Isosceles"){
       $("ul#isosceles").append("<li>" + triangle.side1 + " "+ triangle.side2 + " " + triangle.side3 + "</li>");
